@@ -1,0 +1,71 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+html {
+  font-family: "Montserrat", "Arial", sans-serif;
+  background-color: $color-default-white;
+  color: $color-default-black;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.page-content {
+  padding-top: var(--header-height);
+}
+
+.is-hidden {
+  display: none;
+}
