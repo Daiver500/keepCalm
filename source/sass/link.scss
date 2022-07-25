@@ -1,7 +1,7 @@
 .link {
   color: $color-default-white;
   cursor: pointer;
-  transition: color, 0.3s ease;
+  transition: opacity, 0.3s ease;
 }
 
 .link:disabled {
@@ -12,6 +12,6 @@
 @media (hover: hover), screen and (min-width: 0\0) {
   .link:hover,
   .link:focus {
-    color: $color-default-white;
+    opacity: 0.5;
   }
 }

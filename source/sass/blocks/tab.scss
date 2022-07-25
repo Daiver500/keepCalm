@@ -1,0 +1,47 @@
+.tabs {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 222px;
+  overflow: hidden;
+
+  @include vp-1023 {
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+}
+
+.tab.is-active {
+  position: relative;
+  visibility: visible;
+}
+
+.tab.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.tab.is-hidden .tab-content {
+  display: none;
+}
+
+.show {
+  opacity: 0;
+  animation: show 0.3s 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show {
+  0%{
+  opacity:0;
+  }
+  100% {
+  opacity:1;
+  }
+}
+
+.tabs .container {
+  @include vp-1023 {
+    padding: 0;
+  }
+}

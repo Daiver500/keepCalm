@@ -1,6 +1,6 @@
 const sliderBlock = document.querySelector('.intro-slider');
 
-const introSlider = () => {
+const gallerySlider = () => {
   let swiper;
   if (!sliderBlock) {
     return;
@@ -24,4 +24,4 @@ const introSlider = () => {
   }
 };
 
-export {introSlider};
+export {gallerySlider};

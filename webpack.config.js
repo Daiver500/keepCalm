@@ -35,7 +35,7 @@ module.exports = {
           "sass-loader",
         ],
       },
-      { test: /\.(js)$/,
+      /*{ test: /\.(js)$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
@@ -55,14 +55,14 @@ module.exports = {
         generator: {
           filename: 'assets/img/[name][ext]'
         }
-      }
+      }*/
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'style.min.css',
     }),
-    new CleanWebpackPlugin(),
+    /*new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         { from: "source/img", to: "img" },
@@ -72,7 +72,7 @@ module.exports = {
     }),
     new ImageminPlugin({
       test: /\.(jpe?g|png)$/i
-    }),
+    }),*/
   ],
   optimization: {
     minimizer: [

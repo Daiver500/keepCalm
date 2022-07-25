@@ -1,0 +1,23 @@
+.cards-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 14%;
+
+  @include vp-1023 {
+    display: flex;
+    flex-direction: column;
+    grid-column-gap: unset;
+    grid-row-gap: 60px;
+  }
+}
+
+.cards-list:not(:last-child) {
+  margin-bottom: 87px;
+
+  @include vp-1023 {
+    margin-bottom: 60px;
+  }
+}

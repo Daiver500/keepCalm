@@ -1,0 +1,53 @@
+.tabs-header {
+  padding-top: 82px;
+  padding-bottom: 113px;
+
+  @include vp-1023 {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+}
+
+.tabs-header__list {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-row-gap: 10px;
+  grid-column-gap: 55px;
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.tabs-header__button {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 39.6px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  transition: opacity, 0.3s ease;
+
+  @include vp-1023 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+}
+
+.tabs-header__item.is-active {
+  border-bottom: 5px solid $color-nero;
+  width: 100%;
+
+  @include vp-1023 {
+    border-bottom: 3px solid $color-nero;
+  }
+}

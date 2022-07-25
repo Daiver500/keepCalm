@@ -15,73 +15,145 @@
 
 <body class="page">
   <div class="wrapper">
-
     <header class="header">
       <div class="container">
-
+        <div class="header__inner">
+          <a href="#" class="link header__logo header__logo--main" aria-label="логотип компании">
+            <img src="../img/logo.png" srcset="../img/logo@2x.png 2x" alt="логотип компании" width="213px" height="36px">
+          </a>
+          <a class="link header__link" href="tel:+74954954954">
+            <span>+7 (495) 495-49-54</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.3845 2.4792L7.5253 2.7384C6.75897 2.96924 6.07455 3.41423 5.55263 4.02098C5.0307 4.62773 4.69301 5.37098 4.5793 6.1632C4.2229 8.6448 5.0197 11.5464 6.9409 14.874C8.8573 18.1932 10.9669 20.3316 13.2889 21.2676C14.035 21.5683 14.8517 21.6484 15.642 21.4984C16.4323 21.3485 17.1629 20.9747 17.7469 20.4216L18.3985 19.8048C18.8207 19.4049 19.0833 18.8654 19.1376 18.2865C19.1919 17.7075 19.0341 17.1286 18.6937 16.6572L17.0665 14.4012C16.8465 14.0966 16.5367 13.8685 16.1806 13.7489C15.8244 13.6292 15.4398 13.624 15.0805 13.734L12.6193 14.4864L12.5557 14.4984C12.2845 14.538 11.6593 13.9512 10.8793 12.6C10.0633 11.1864 9.8929 10.3596 10.1185 10.146L11.3713 8.9784C11.8288 8.55161 12.1412 7.99232 12.2647 7.37898C12.3883 6.76564 12.3167 6.12901 12.0601 5.5584L11.2681 3.7932C11.0292 3.26149 10.6049 2.8349 10.0745 2.5931C9.54406 2.35131 8.94378 2.31082 8.3857 2.4792H8.3845ZM10.1725 4.2852L10.9657 6.0504C11.1199 6.39268 11.1631 6.77468 11.089 7.14273C11.015 7.51079 10.8275 7.84639 10.5529 8.1024L9.2977 9.2712C8.4937 10.0308 8.7601 11.3304 9.8389 13.2C10.8553 14.9592 11.7817 15.828 12.7765 15.6768L12.9253 15.6456L15.4309 14.8812C15.5507 14.8444 15.6789 14.846 15.7977 14.8858C15.9165 14.9257 16.0199 15.0017 16.0933 15.1032L17.7205 17.3592C17.8909 17.5949 17.9699 17.8845 17.9427 18.1741C17.9156 18.4638 17.7841 18.7336 17.5729 18.9336L16.9213 19.5504C16.5041 19.9452 15.9823 20.212 15.418 20.319C14.8537 20.426 14.2705 20.3687 13.7377 20.154C11.7001 19.3332 9.7741 17.3808 7.9801 14.274C6.1825 11.16 5.4553 8.5116 5.7673 6.3336C5.84847 5.76757 6.08971 5.23653 6.46262 4.80303C6.83552 4.36953 7.32455 4.05164 7.8721 3.8868L8.7325 3.6276C9.01145 3.54378 9.31136 3.56428 9.57631 3.68527C9.84127 3.80626 10.0532 4.0195 10.1725 4.2852Z" fill="currentColor"/>
+              </svg>
+          </a>
         </div>
+      </div>
     </header>
 
-    <main >
-      <div class="page-content">
-      <section class="intro">
-        <div class="container">
-          <div class="intro__inner">
+    <main class="page-content">
 
-            <div class="intro-slider swiper ">
-              <div class="intro-list swiper-wrapper ">
+        <section class="jewellery">
+          <div class="jewellery-tabs">
 
-                <div class="intro-card swiper-slide">
-                  <h1 class="title intro-card__title">Как бизнесу сохранять </h1>
-                  <p class="title intro-card__title">IT-кадры на&nbsp;фоне кризиса</p>
-                  <div class="intro-card__text-wrapper">
-                    <p>Инструменты, которые могут использовать компании для удержания сотрудников</p>
+            <div class="tabs-header">
+              <div class="container">
+                <ul class="tabs-header__list">
+                  <li class="tabs-header__item is-active"><button class="tabs-header__button" type="button">Lorem</button></li>
+                  <li class="tabs-header__item"><button class="tabs-header__button" type="button">Ipsum</button></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+            <div class="container">
+              <h1 class="title">Lorem ipsum dolor <span>sit</span> amet</h1>
+            </div>
+            </div>
+
+            <div class="tabs">
+              <div class="container">
+              <div class="tab is-active">
+
+                  <div class="tab-content">
+                     <ul class="cards-list cards-list--big-image">
+                        <li class="card-item">
+                          <div class="card-item__info">
+                            <p class="title title--medium">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            </p>
+                            <div class="card-item__text">
+                              <p>
+                              Incididunt ut&nbsp;labore et&nbsp;dolore magna aliqua. Ut&nbsp;enim ad&nbsp;minim veniam, quis nostrud exercitation ullamco laboris nisi ut&nbsp;aliquip ex&nbsp;ea&nbsp;commodo consequat. Duis aute irure dolor in&nbsp;reprehenderit in&nbsp;voluptate velit esse cillum dolore eu&nbsp;fugiat nulla pariatur.
+                              </p>
+                              <p>
+                              Excepteur sint occaecat cupidatat non proident, sunt in&nbsp;culpa qui officia deserunt mollit anim id&nbsp;est laborum/ Incididunt ut&nbsp;labore et&nbsp;dolore magna aliqua. Ut&nbsp;enim ad&nbsp;minim veniam, quis nostrud exercitation ullamco laboris nisi ut&nbsp;aliquip ex&nbsp;ea&nbsp;commodo consequat. Duis aute irure dolor in&nbsp;reprehenderit in&nbsp;voluptate velit esse cillum dolore eu&nbsp;fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                              </p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="card-item card-item--image">
+                          <picture>
+                            <source type="image/webp" srcset="img/card-1.webp, img/card-1@2x.webp 2x">
+                            <img src="img/card-1.jpg" srcset="img/card-1@2x.jpg 2x" width="860" height="480" alt="фото карточки">
+                          </picture>
+                        </li>
+                      </ul>
+
+                      <ul class="cards-list cards-list--small-image">
+                      <li class="card-item card-item--image">
+                        <picture>
+                          <source type="image/webp" srcset="img/card-2.webp, img/card-2@2x.webp 2x">
+                          <img src="img/card-2jpg" srcset="img/card-2@2x.jpg 2x" width="599" height="411" alt="фото карточки">
+                        </picture>
+                      </li>
+                      <li class="card-item">
+                        <div class="card-item__info">
+                          <p class="title title--medium">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                          </p>
+                          <div class="card-item__text">
+                            <p>
+                              Incididunt ut&nbsp;labore et&nbsp;dolore magna aliqua. Ut&nbsp;enim ad&nbsp;minim veniam, quis nostrud exercitation ullamco laboris nisi ut&nbsp;aliquip ex&nbsp;ea&nbsp;commodo consequat. Duis aute irure dolor in&nbsp;reprehenderit in&nbsp;voluptate velit esse cillum dolore eu&nbsp;fugiat nulla pariatur.
+                            </p>
+                            <p>
+                              Excepteur sint occaecat cupidatat non proident, sunt in&nbsp;culpa qui officia deserunt mollit anim id&nbsp;est laborum
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+
                   </div>
-                  <button class="btn intro-card__btn" type="button">Подробнее</button>
-                </div>
-
-                <div class="intro-card swiper-slide">
-                  <h1 class="title intro-card__title">Как бизнесу сохранять IT-кадры на&nbsp;фоне кризиса</h1>
-                  <div class="intro-card__text-wrapper">
-                    <p>Инструменты, которые могут использовать компании для удержания сотрудников</p>
-                  </div>
-                  <button class="btn intro-card__btn" type="button">Подробнее</button>
-                </div>
-
-                <div class="intro-card swiper-slide">
-                  <h1 class="title intro-card__title">Как бизнесу сохранять IT-кадры на&nbsp;фоне кризиса</h1>
-                  <div class="intro-card__text-wrapper">
-                    <p>Инструменты, которые могут использовать компании для удержания сотрудников</p>
-                  </div>
-                  <button class="btn intro-card__btn" type="button">Подробнее</button>
-                </div>
 
               </div>
 
-            </div>
-            <div class="intro-pagination swiper-pagination"></div>
+              <div class="tab is-hidden">
 
-            <div class="intro__image">
-              <picture>
-                <source type="image/webp" srcset="img/intro-img.webp, img/intro-img@2x.webp 2x">
-                <img src="img/intro-img.jpg" srcset="img/intro-img@2x.jpg 2x" width="1440" height="546"
-                  alt="картинка специалиста">
-              </picture>
+                  <div class="tab-content">
+                    <ul class="cards-list cards-list--small-image">
+                      <li class="card-item card-item--image">
+                        <picture>
+                          <source type="image/webp" srcset="img/card-2.webp, img/card-2@2x.webp 2x">
+                          <img src="img/card-2jpg" srcset="img/card-2@2x.jpg 2x" width="599" height="411" alt="фото карточки">
+                        </picture>
+                      </li>
+                      <li class="card-item">
+                        <div class="card-item__info">
+                          <p class="title title--medium">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                          </p>
+                          <div class="card-item__text">
+                            <p>
+                              Incididunt ut&nbsp;labore et&nbsp;dolore magna aliqua. Ut&nbsp;enim ad&nbsp;minim veniam, quis nostrud exercitation ullamco laboris nisi ut&nbsp;aliquip ex&nbsp;ea&nbsp;commodo consequat. Duis aute irure dolor in&nbsp;reprehenderit in&nbsp;voluptate velit esse cillum dolore eu&nbsp;fugiat nulla pariatur.
+                            </p>
+                            <p>
+                              Excepteur sint occaecat cupidatat non proident, sunt in&nbsp;culpa qui officia deserunt mollit anim id&nbsp;est laborum
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+              </div>
+              </div>
             </div>
+
+
+
 
           </div>
-        </div>
-      </section>
-
+        </section>
 
     </main>
 
     <footer class="footer">
       <div class="container">
         <div class="footer__inner">
-
-          </div>
+          <p class="footer__text">© Test, 1022–2022</p>
         </div>
+      </div>
     </footer>
 
   </div>
