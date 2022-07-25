@@ -56,14 +56,9 @@
   padding: 0;
   z-index: 50;
   cursor: pointer;
-  transition: opacity, 0.3s ease;
-
-  @media (hover: hover), screen and (min-width: 0\0) {
-    &:hover,
-    &:focus {
-      opacity: 0.5;
-    }
-  }
+  transition: opacity, 1s ease;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .tab__close-btn,
@@ -72,6 +67,14 @@
   height: 30px;
 }
 
-.tab__close-btn.is-hidden {
-  display: none;
+.test.is-open .tab__close-btn {
+  opacity: 1;
+  pointer-events: all;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
 }

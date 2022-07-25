@@ -29,7 +29,7 @@ const gallerySlider = () => {
     swiper.update();
     swiperSlides.forEach((item, index) => {
       if (item.id === target.id) {
-        item.classList.add('appear')
+        item.classList.add('show')
         swiper.slideTo(index, 10);
       }
     });
@@ -46,7 +46,7 @@ const gallerySlider = () => {
     swiper.params.slidesPerView = 5;
     swiper.update();
     swiperSlides.forEach((item, index) => {
-      item.classList.remove('appear')
+      item.classList.remove('show')
       swiper.slideTo(index, 10);
     });
     closeButtons.forEach((button) => {
