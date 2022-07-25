@@ -18,11 +18,13 @@ const gallerySlider = () => {
   const tabs = document.querySelector('.tabs');
   const tab = document.querySelector('.tab--second');
   const closeButtons = document.querySelectorAll('.tab__close-btn');
+  const body = document.querySelectorAll('body');
 
   const openFullscreenSwiper = (evt) => {
     const target = evt.target.closest('.swiper-slide');
     swiper.el.classList.add('fullscreen');
     test.classList.add('is-open');
+    body[0].classList.add('no-scroll');
     tabs.style.position = "unset";
     tab.style.position = "unset";
     swiper.params.slidesPerView = 1;
@@ -41,6 +43,7 @@ const gallerySlider = () => {
   const closeFullscreenSwiper = (evt) => {
     swiper.el.classList.remove('fullscreen');
     test.classList.remove('is-open');
+    body[0].classList.remove('no-scroll');
     tabs.style.position = "relative";
     tab.style.position = "relative";
     swiper.params.slidesPerView = 5;
