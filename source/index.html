@@ -15,6 +15,7 @@
 
 <body class="page">
   <div class="wrapper">
+
     <header class="header">
       <div class="container">
         <div class="header__inner">
@@ -32,8 +33,7 @@
     </header>
 
     <main class="page-content">
-
-        <section class="jewellery">
+       <section class="jewellery">
           <div class="jewellery-tabs">
 
             <div class="tabs-header">
@@ -52,10 +52,11 @@
             </div>
 
             <div class="tabs">
-              <div class="container">
+
               <div class="tab is-active">
 
                   <div class="tab-content">
+                    <div class="container">
                      <ul class="cards-list cards-list--big-image">
                         <li class="card-item">
                           <div class="card-item__info">
@@ -84,7 +85,7 @@
                       <li class="card-item card-item--image">
                         <picture>
                           <source type="image/webp" srcset="img/card-2.webp, img/card-2@2x.webp 2x">
-                          <img src="img/card-2jpg" srcset="img/card-2@2x.jpg 2x" width="599" height="411" alt="фото карточки">
+                          <img src="img/card-2.jpg" srcset="img/card-2@2x.jpg 2x" width="599" height="411" alt="фото карточки">
                         </picture>
                       </li>
                       <li class="card-item">
@@ -103,59 +104,91 @@
                         </div>
                       </li>
                     </ul>
-
+                    </div>
                   </div>
 
               </div>
 
-              <div class="tab is-hidden">
- <!-- Slider main container -->
- <div class='swiper-container'>
-  <!-- Additional required wrapper -->
-  <div class='swiper-wrapper'>
-    <!-- Slides -->
-    <div class='swiper-slide'>
-      Slide 1
-      <img src='https://farm5.staticflickr.com/4906/31468331457_2b30dda299_z.jpg' alt='Hubble’s Cosmic Holiday Wreath'>
-      <figcaption>
-        <a href='https://www.flickr.com/photos/gsfc/31468331457/'>"Hubble’s Cosmic Holiday Wreath" &copy; NASA </a><br />
-        <a href='https://creativecommons.org/licenses/by/2.0/' target='_blank'>Creative Commons</a>
-      </figcaption>
-    </div>
-    <div class='swiper-slide'>
-      Slide 2
-      <img src='https://farm5.staticflickr.com/4892/46385281411_69f232b371_z.jpg' alt='Launch of Apollo 8'>
-      <figcaption>
-        <a href='https://www.flickr.com/photos/gsfc/46385281411/'>"Launch of Apollo 8" &copy; NASA </a><br />
-        <a href='https://creativecommons.org/licenses/by/2.0/' target='_blank'>Creative Commons</a>
-      </figcaption>
-    </div>
-    <div class='swiper-slide'>
-      Slide 3
-      <img src='https://farm5.staticflickr.com/4849/44568285330_ff61d638a9_z.jpg' alt='Launch of Apollo 8 lunar orbit mission'>
-      <figcaption>
-        <a href='https://www.flickr.com/photos/gsfc/44568285330/'>"Launch of Apollo 8 lunar orbit mission" &copy; NASA </a><br />
-        <a href='https://creativecommons.org/licenses/by/2.0/' target='_blank'>Creative Commons</a>
-      </figcaption>
-    </div>
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+              <div class="tab tab--second is-hidden">
+                <div class="test">
+                <button type="button" class="tab__close-btn" aria-label="закрыть слайдер">
+                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 1.2959L1 17.2959M17 17.2959L1 1.2959L17 17.2959Z" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </button>
+                  <!-- Slider main container -->
+                  <div class='swiper-container'>
+                    <!-- Additional required wrapper -->
+                    <div class='swiper-wrapper'>
+                      <!-- Slides -->
+                       <div class='swiper-slide' id="1">
+                          Slider 1
+                         <picture class='swiper-slide__image'>
+                           <source type="image/webp" srcset="img/slider-1.webp, img/slider-1@2x.webp 2x">
+                           <img src="img/slider-1.jpg" srcset="img/slider-1@2x.jpg 2x" width="360" height="550" alt="фото карточки">
+                         </picture>
+                         <figcaption>
+                          <p>"Hubble Cosmic Holiday Wreath" &copy; NASA </p>
+                         </figcaption>
+                       </div>
 
-  <!-- If we need navigation buttons -->
-  <div class='swiper-button-prev'></div>
-  <div class='swiper-button-next'></div>
-</div>
+                       <div class='swiper-slide' id="2">
+                        Slider 2
+                        <picture class='swiper-slide__image'>
+                          <source type="image/webp" srcset="img/slider-2.webp, img/slider-2@2x.webp 2x">
+                          <img src="img/slider-2.jpg" srcset="img/slider-2@2x.jpg 2x" width="360" height="550" alt="фото карточки" >
+                        </picture>
+                        <figcaption>
+                         <p>"Hubble Cosmic Holiday Wreath" &copy; NASA </p>
+                        </figcaption>
+                      </div>
+
+                      <div class='swiper-slide' id="3">
+                        Slider 3
+                        <picture class='swiper-slide__image'>
+                          <source type="image/webp" srcset="img/slider-3.webp, img/slider-3@2x.webp 2x">
+                          <img src="img/slider-3.jpg" srcset="img/slider-3@2x.jpg 2x" width="360" height="550" alt="фото карточки" >
+                        </picture>
+                        <figcaption>
+                         <p>"Hubble Cosmic Holiday Wreath" &copy; NASA </p>
+                        </figcaption>
+                      </div>
+
+                      <div class='swiper-slide'  id="4">
+                        Slider 4
+                        <picture class='swiper-slide__image'>
+                          <source type="image/webp" srcset="img/slider-4.webp, img/slider-4@2x.webp 2x">
+                          <img src="img/slider-4.jpg" srcset="img/slider-4@2x.jpg 2x" width="360" height="550" alt="фото карточки">
+                        </picture>
+                        <figcaption>
+                         <p>"Hubble Cosmic Holiday Wreath" &copy; NASA </p>
+                        </figcaption>
+                      </div>
+
+                      <div class='swiper-slide' id="5">
+                        Slider 5
+                        <picture class='swiper-slide__image'>
+                          <source type="image/webp" srcset="img/slider-5.webp, img/slider-5@2x.webp 2x">
+                          <img src="img/slider-5.jpg" srcset="img/slider-5@2x.jpg 2x" width="360" height="550" alt="фото карточки" >
+                        </picture>
+                        <figcaption>
+                         <p>"Hubble Cosmic Holiday Wreath" &copy; NASA </p>
+                        </figcaption>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
               </div>
-              </div>
-            </div>
 
-
+              <!-- If we need navigation buttons -->
+              <div class='swiper-button-prev'></div>
+              <div class='swiper-button-next'></div>
 
 
           </div>
-        </section>
-
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -169,5 +202,4 @@
   </div>
   <script src="bundle.js"></script>
 </body>
-
 </html>

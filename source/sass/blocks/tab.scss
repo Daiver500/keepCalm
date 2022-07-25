@@ -45,3 +45,33 @@
     padding: 0;
   }
 }
+
+.tab__close-btn {
+  display: flex;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  z-index: 50;
+  cursor: pointer;
+  transition: opacity, 0.3s ease;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+}
+
+.tab__close-btn,
+.tab__close-btn svg {
+  width: 22px;
+  height: 30px;
+}
+
+.tab__close-btn.is-hidden {
+  display: none;
+}

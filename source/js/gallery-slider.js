@@ -1,8 +1,9 @@
-
-
 const gallerySlider = () => {
+
   let swiper = new Swiper('.swiper-container', {
-    loop: true,
+    slidesPerView: 5,
+    spaceBetween: 40,
+    loop: false,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -10,62 +11,53 @@ const gallerySlider = () => {
     pagination: {
       el: '.swiper-pagination',
     },
-    slidesPerView: 3,
-    spaceBetween: 10,
   });
 
-  let swiperSlides = Array.from(swiper.slides);
+  const swiperSlides = Array.from(swiper.slides);
+  const test = document.querySelector('.test');
+  const tabs = document.querySelector('.tabs');
+  const tab = document.querySelector('.tab--second');
+  const closeButtons = document.querySelectorAll('.tab__close-btn');
 
-  swiperSlides.forEach(function (slide) {
-    openFullscreenSliderHandler(slide);
-    closeFullscreenSliderHandler(slide);
-  });
-
-  function openFullscreenSliderHandler(slide) {
-    let slideImage = slide.querySelector('img');
-
-    slideImage.addEventListener('click', function () {
-      let slideNumber = slide.dataset.swiperSlideIndex;
-      openFullscreenSwiper(slideNumber);
-    });
-  }
-
-  function openFullscreenSwiper(slideNumber) {
+  const openFullscreenSwiper = (evt) => {
+    const target = evt.target.closest('.swiper-slide');
     swiper.el.classList.add('fullscreen');
+    test.classList.add('is-open');
+    tabs.style.position = "unset";
+    tab.style.position = "unset";
     swiper.params.slidesPerView = 1;
     swiper.update();
-    swiper.slideToLoop(parseInt(slideNumber, 10), 0);
-  }
-
-  function closeFullscreenSliderHandler(slide) {
-    let slideNumber = slide.dataset.swiperSlideIndex;
-    let backdrop = document.createElement('div');
-    let closeButton = document.createElement('div');
-
-    slide.appendChild(backdrop);
-    slide.appendChild(closeButton);
-    backdrop.classList.add('backdrop');
-    closeButton.classList.add('close-button');
-    closeButton.innerHTML = 'x';
-
-    backdrop.addEventListener('click', function () {
-      closeFullscreenSwiper(slideNumber);
+    swiperSlides.forEach((item, index) => {
+      if (item.id === target.id) {
+        item.classList.add('appear')
+        swiper.slideTo(index, 10);
+      }
     });
-
-    closeButton.addEventListener('click', function () {
-      closeFullscreenSwiper(slideNumber);
+    closeButtons.forEach((button) => {
+      button.addEventListener('click', closeFullscreenSwiper);
     });
-  }
+  };
 
-  function closeFullscreenSwiper(slideNumber) {
+  const closeFullscreenSwiper = (evt) => {
     swiper.el.classList.remove('fullscreen');
-    swiper.params.slidesPerView = 3;
+    test.classList.remove('is-open');
+    tabs.style.position = "relative";
+    tab.style.position = "relative";
+    swiper.params.slidesPerView = 5;
     swiper.update();
-    swiper.slideToLoop(parseInt(slideNumber, 10), 0);
-  }
+    swiperSlides.forEach((item, index) => {
+      item.classList.remove('appear')
+      swiper.slideTo(index, 10);
+    });
+    closeButtons.forEach((button) => {
+      button.removeEventListener('click', closeFullscreenSwiper);
+    });
+  };
 
+  swiperSlides.forEach((slider) => {
+    slider.addEventListener('click', openFullscreenSwiper);
+  });
 };
-
 
 export {gallerySlider};
 
