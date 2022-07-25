@@ -42,28 +42,25 @@ body {
 }
 
 body {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+  font-weight: 500;
+  color: $color-nero;
 
   @include vp-767 {
     font-size: 14px;
-    line-height: 22px;
+    line-height: 18.2px;
   }
 }
 
 html {
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: "Manrope", "Arial", sans-serif;
   background-color: $color-default-white;
-  color: $color-default-black;
+  color: $color-nero;
 }
 
 .no-scroll {
   overflow: hidden;
-}
-
-.page-content {
-  padding-top: var(--header-height);
 }
 
 .is-hidden {
