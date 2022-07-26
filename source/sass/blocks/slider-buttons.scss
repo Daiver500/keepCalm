@@ -83,53 +83,13 @@
 
 .tab__inner.is-open .slider-buttons--opened-slider {
   display: flex;
-}
+  right: -1px;
+  top: 92%;
+  left: unset;
 
-/*@media (min-width: 1024px) and (max-width: 1090px) {
-  .jewellery.is-open .slider-buttons {
-    bottom: 174px;
-    left: 82%;
-    transform: translateX(-92%);
+  @include vp-1023 {
+    top: 96%;
   }
 }
 
-@media (min-width: 1091px) and (max-width: 1600px) {
-  .jewellery.is-open .slider-buttons {
-    bottom: 160px;
-    left: 82%;
-    transform: translateX(-92%);
-  }
-}
-
-@media (min-width: 1601px) and (max-width: 1700px) {
-  .jewellery.is-open .slider-buttons {
-    bottom: 178px;
-    left: 82%;
-    transform: translateX(-91%);
-  }
-}
-
-@media (min-width: 1701px) and (max-width: 1800px) {
-  .jewellery.is-open .slider-buttons {
-    bottom: 180px;
-    left: 82%;
-    transform: translateX(-90%);
-  }
-}
-
-@media (min-width: 1801px) and (max-width: 1900px) {
-  .jewellery.is-open .slider-buttons {
-    bottom: 185px;
-    left: 82%;
-    transform: translateX(-90%);
-  }
-}
-
-@media (min-width: 1901px) {
-  .jewellery.is-open .slider-buttons {
-    bottom: 195px;
-    left: 82%;
-    transform: translateX(-89%);
-  }
-}*/
 
