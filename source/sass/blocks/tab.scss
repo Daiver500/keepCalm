@@ -50,7 +50,7 @@
   display: flex;
   position: absolute;
   right: 25px;
-  top: 100px;
+  top: 25px;
   border: none;
   background-color: transparent;
   padding: 0;
@@ -77,4 +77,40 @@
       opacity: 0.5;
     }
   }
+}
+
+.tab--second.gradient-on {
+  position: relative;
+}
+
+.tab--second::before,
+.tab--second::after {
+  display: none;
+}
+
+.tab--second.gradient-on.tab--second::before,
+.tab--second.gradient-on.tab--second::after {
+  position: absolute;
+  content: "";
+  width: 18.5%;
+  height: 101%;
+  top: 0;
+  z-index: 200;
+  display: block;
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+
+.tab--second.gradient-on.tab--second::before {
+  background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.05) 100%);
+  left: 0;
+}
+
+
+.tab--second.gradient-on.tab--second::after {
+  background: linear-gradient(270deg, white 0%, rgba(255, 255, 255, 0.05) 100%);
+  right: 0;
 }

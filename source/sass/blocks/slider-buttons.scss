@@ -1,0 +1,112 @@
+.slider-buttons {
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 150px;
+  min-height: 32px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 200;
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+.slider-button {
+   color: $color-nero;
+   transition: all, 0.3 ease;
+   cursor: pointer;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+}
+
+.slider-button svg {
+  width: 32px;
+  height: 32px;
+
+  @include vp-1023 {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.jewellery.is-open .slider-button {
+  color: $color-default-white;
+}
+
+.jewellery.is-open .slider-buttons {
+  //bottom: 208px;
+  left: 80%;
+  transform: translateX(-80%);
+  background-color: $color-nero;
+  min-width: 135px;
+  min-height: 70px;
+  align-items: center;
+  padding: 19px 23px;
+
+  @include vp-1023 {
+    display: flex;
+    bottom: 156px;
+    left: 90%;
+    transform: translateX(-90%);
+    min-width: 60px;
+    min-height: 30px;
+    padding: 8px 11px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1090px) {
+  .jewellery.is-open .slider-buttons {
+    bottom: 174px;
+    left: 82%;
+    transform: translateX(-92%);
+  }
+}
+
+@media (min-width: 1091px) and (max-width: 1600px) {
+  .jewellery.is-open .slider-buttons {
+    bottom: 160px;
+    left: 82%;
+    transform: translateX(-92%);
+  }
+}
+
+@media (min-width: 1601px) and (max-width: 1700px) {
+  .jewellery.is-open .slider-buttons {
+    bottom: 178px;
+    left: 82%;
+    transform: translateX(-91%);
+  }
+}
+
+@media (min-width: 1701px) and (max-width: 1800px) {
+  .jewellery.is-open .slider-buttons {
+    bottom: 180px;
+    left: 82%;
+    transform: translateX(-90%);
+  }
+}
+
+@media (min-width: 1801px) and (max-width: 1900px) {
+  .jewellery.is-open .slider-buttons {
+    bottom: 185px;
+    left: 82%;
+    transform: translateX(-90%);
+  }
+}
+
+@media (min-width: 1901px) {
+  .jewellery.is-open .slider-buttons {
+    bottom: 200px;
+    left: 82%;
+    transform: translateX(-89%);
+  }
+}
+

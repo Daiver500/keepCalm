@@ -53,7 +53,7 @@
 
             <div class="tabs">
 
-              <div class="tab is-active">
+              <div class="tab tab--first is-active">
 
                   <div class="tab-content">
                     <div class="container">
@@ -109,7 +109,7 @@
 
               </div>
 
-              <div class="tab tab--second is-hidden">
+              <div class="tab tab--second is-hidden gradient-on">
                 <div class="test">
                 <button type="button" class="tab__close-btn" aria-label="закрыть слайдер">
                   <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +117,7 @@
                   </svg>
                 </button>
                   <!-- Slider main container -->
-                  <div class='swiper-container'>
+                  <div class='swiper-container gallery-slider'>
                     <!-- Additional required wrapper -->
                     <div class='swiper-wrapper'>
                       <!-- Slides -->
@@ -127,9 +127,6 @@
                            <source type="image/webp" srcset="img/slider-1.webp, img/slider-1@2x.webp 2x">
                            <img src="img/slider-1.jpg" srcset="img/slider-1@2x.jpg 2x" width="360" height="550" alt="фото карточки">
                          </picture>
-                         <figcaption>
-                          <p>"Hubble Cosmic Holiday Wreath" &copy; NASA </p>
-                         </figcaption>
                        </div>
 
                        <div class='swiper-slide' id="2">
@@ -138,9 +135,6 @@
                           <source type="image/webp" srcset="img/slider-2.webp, img/slider-2@2x.webp 2x">
                           <img src="img/slider-2.jpg" srcset="img/slider-2@2x.jpg 2x" width="360" height="550" alt="фото карточки" >
                         </picture>
-                        <figcaption>
-                         <p>"Hubble Cosmic Holiday Wreath" &copy; NASA </p>
-                        </figcaption>
                       </div>
 
                       <div class='swiper-slide' id="3">
@@ -149,41 +143,66 @@
                           <source type="image/webp" srcset="img/slider-3.webp, img/slider-3@2x.webp 2x">
                           <img src="img/slider-3.jpg" srcset="img/slider-3@2x.jpg 2x" width="360" height="550" alt="фото карточки" >
                         </picture>
-                        <figcaption>
-                         <p>"Hubble Cosmic Holiday Wreath" &copy; NASA </p>
-                        </figcaption>
                       </div>
 
-                      <div class='swiper-slide'  id="4">
+                      <div class='swiper-slide gallery-slide-4'  id="4">
                         Slider 4
                         <picture class='swiper-slide__image'>
                           <source type="image/webp" srcset="img/slider-4.webp, img/slider-4@2x.webp 2x">
                           <img src="img/slider-4.jpg" srcset="img/slider-4@2x.jpg 2x" width="360" height="550" alt="фото карточки">
                         </picture>
                         <figcaption>
-                         <p>"Hubble Cosmic Holiday Wreath" &copy; NASA </p>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
                         </figcaption>
                       </div>
 
-                      <div class='swiper-slide' id="5">
+                      <div class='swiper-slide gallery-slide-5' id="5">
                         Slider 5
                         <picture class='swiper-slide__image'>
                           <source type="image/webp" srcset="img/slider-5.webp, img/slider-5@2x.webp 2x">
                           <img src="img/slider-5.jpg" srcset="img/slider-5@2x.jpg 2x" width="360" height="550" alt="фото карточки" >
+
                         </picture>
                         <figcaption>
-                         <p>"Hubble Cosmic Holiday Wreath" &copy; NASA </p>
+                         <p>Lorem ipsum dolor sit amet </p>
                         </figcaption>
+                      </div>
+
+                      <div class='swiper-slide' id="3">
+                        Slider 6
+                        <picture class='swiper-slide__image'>
+                          <source type="image/webp" srcset="img/slider-3.webp, img/slider-3@2x.webp 2x">
+                          <img src="img/slider-3.jpg" srcset="img/slider-3@2x.jpg 2x" width="360" height="550" alt="фото карточки" >
+                        </picture>
+                      </div>
+
+                      <div class='swiper-slide' id="3">
+                        Slider 7
+                        <picture class='swiper-slide__image'>
+                          <source type="image/webp" srcset="img/slider-3.webp, img/slider-3@2x.webp 2x">
+                          <img src="img/slider-3.jpg" srcset="img/slider-3@2x.jpg 2x" width="360" height="550" alt="фото карточки" >
+                        </picture>
                       </div>
 
                     </div>
                   </div>
                 </div>
+                <!-- If we need navigation buttons -->
+              <div class="slider-buttons">
+                <div class='slider-button slider-button--prev swiper-button-disabled'>
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.348 4.666C21.5224 4.8446 21.6201 5.08435 21.6201 5.334C21.6201 5.58366 21.5224 5.82341 21.348 6.002L11.602 16L21.348 25.996C21.5224 26.1746 21.6201 26.4143 21.6201 26.664C21.6201 26.9136 21.5224 27.1534 21.348 27.332C21.2632 27.4191 21.1618 27.4883 21.0498 27.5356C20.9379 27.5828 20.8175 27.6072 20.696 27.6072C20.5744 27.6072 20.4541 27.5828 20.3421 27.5356C20.2302 27.4883 20.1288 27.4191 20.044 27.332L9.68 16.698C9.49797 16.5112 9.39609 16.2608 9.39609 16C9.39609 15.7392 9.49797 15.4887 9.68 15.302L20.044 4.668C20.1288 4.58092 20.2302 4.5117 20.3421 4.46444C20.4541 4.41717 20.5744 4.39282 20.696 4.39282C20.8175 4.39282 20.9379 4.41717 21.0498 4.46444C21.1618 4.5117 21.2632 4.58092 21.348 4.668V4.666Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class='slider-button slider-button--next swiper-button-disabled'>
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.652 4.666C10.4775 4.8446 10.3799 5.08435 10.3799 5.334C10.3799 5.58366 10.4775 5.82341 10.652 6.002L20.398 16L10.652 25.996C10.4775 26.1746 10.3799 26.4143 10.3799 26.664C10.3799 26.9136 10.4775 27.1534 10.652 27.332C10.7368 27.4191 10.8382 27.4883 10.9501 27.5356C11.0621 27.5828 11.1824 27.6072 11.304 27.6072C11.4255 27.6072 11.5459 27.5828 11.6578 27.5356C11.7698 27.4883 11.8712 27.4191 11.956 27.332L22.32 16.698C22.502 16.5112 22.6039 16.2608 22.6039 16C22.6039 15.7392 22.502 15.4887 22.32 15.302L11.956 4.668C11.8712 4.58092 11.7698 4.5117 11.6578 4.46444C11.5459 4.41717 11.4255 4.39282 11.304 4.39282C11.1824 4.39282 11.0621 4.41717 10.9501 4.46444C10.8382 4.5117 10.7368 4.58092 10.652 4.668V4.666Z" fill="currentColor"/>
+                    </svg>
+                </div>
+              </div>
               </div>
 
-              <!-- If we need navigation buttons -->
-              <div class='swiper-button-prev'></div>
-              <div class='swiper-button-next'></div>
+
 
 
           </div>

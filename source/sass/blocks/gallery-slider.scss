@@ -1,7 +1,12 @@
 .swiper-container {
   height: 550px;
   overflow: hidden;
+
+  @include vp-1023 {
+    height: 400px;
+  }
 }
+
 .swiper-container.fullscreen {
   height: 100%;
 }
@@ -54,10 +59,6 @@
   cursor: pointer;
 }
 
-.test {
-
-}
-
 .test.is-open {
   position: absolute;
   top: 0;
@@ -69,10 +70,53 @@
 }
 
 .test.is-open .swiper-slide__image {
-  width: 50%;
-  height: 50%;
-  top: 25%;
-  left: 25%;
+  max-width: 67.7%;
+  max-height: 67.2%;
+  top: 15%;
+  left: 15%;
+
+  @include vp-1023 {
+    max-width: 100%;
+    left: 0;
+  }
 }
 
 
+.gallery-slider figcaption {
+  font-size: 24px;
+  line-height: 26.4px;
+  color: $color-default-white;
+  padding: 35px 30px;
+  width: 100%;
+  bottom: 0;
+  text-align: left;
+  background-color: rgba(20,20,20, 0.5);
+  display: flex;
+}
+
+.gallery-slider figcaption p {
+  margin: 0;
+}
+
+.gallery-slide-5 figcaption {
+  width: 50%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  align-items: flex-start;
+}
+
+.test.is-open .gallery-slider figcaption,
+.test.is-open .gallery-slide-5 figcaption {
+  left: 13%;
+  bottom: 10%;
+  background-color: unset;
+  width: 100%;
+  right: unset;
+  top: unset;
+
+  @include vp-1023 {
+    bottom: 5%;
+    left: 0;
+  }
+}
