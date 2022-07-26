@@ -1,6 +1,6 @@
 .jewellery .slider-buttons {
   position: absolute;
-  right: 42%;
+  left: 50%;
   top: 105%;
   transform: translateX(-50%);
   min-width: 150px;
@@ -10,7 +10,6 @@
 
   @include vp-1023 {
     right: 0;
-    left: 50%;
     min-width: 60px;
     min-height: 30px;
   }
