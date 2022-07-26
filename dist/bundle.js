@@ -10927,27 +10927,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var gallerySlider = function gallerySlider() {
   var breakpoint = window.matchMedia('(max-width: 1023px)');
-  var breakpointDesktop = window.matchMedia('(min-width: 1024px)');
+  var breakpointDesktopLow = window.matchMedia('(min-width: 1024px)');
+  var breakpointDesktopHigh = window.matchMedia('(min-width: 1440px)');
   var jewellerySection = document.querySelector('.jewellery');
   var tabSlider = document.querySelector('.tab--second');
-  var swiper = new Swiper('.swiper-container', {
+  var swiper = new Swiper('.gallery-slider', {
     grabCursor: true,
     speed: 1000,
     direction: 'horizontal',
     slideToClickedSlide: true,
-    //loop: true,
+    loop: true,
     touchStartPreventDefault: false,
     centeredSlides: true,
     navigation: {
       nextEl: '.slider-button--next',
       prevEl: '.slider-button--prev'
     },
-    pagination: {
-      el: '.swiper-pagination'
-    },
     breakpoints: {
-      1024: {
+      1440: {
         slidesPerView: 5,
+        spaceBetween: 40
+      },
+      1024: {
+        slidesPerView: 3,
         spaceBetween: 40
       },
       0: {
@@ -10957,27 +10959,24 @@ var gallerySlider = function gallerySlider() {
     }
   });
   var swiperSlides = Array.from(swiper.slides);
-  var test = document.querySelector('.test');
+  var tabInner = document.querySelector('.tab__inner');
   var tabs = document.querySelector('.tabs');
   var tab = document.querySelector('.tab--second');
   var closeButtons = document.querySelectorAll('.tab__close-btn');
-  var body = document.querySelectorAll('body');
 
   var openFullscreenSwiper = function openFullscreenSwiper(evt) {
     var target = evt.target.closest('.swiper-slide');
     swiper.el.classList.add('fullscreen');
-    test.classList.add('is-open');
+    tabInner.classList.add('is-open');
     jewellerySection.classList.add('is-open');
     tabSlider.classList.remove('gradient-on');
-    body[0].classList.add('no-scroll');
     tabs.style.position = "unset";
     tab.style.position = "unset";
-    swiper.params.slidesPerView = 1;
-    swiper.update();
+    swiper.params.slidesPerView = 1; //swiper.update();
+
     swiperSlides.forEach(function (item, index) {
       if (item.id === target.id) {
-        item.classList.add('show');
-        swiper.slideTo(index, 10);
+        item.classList.add('show'); //swiper.slideToLoop(index, 10);
       }
     });
     closeButtons.forEach(function (button) {
@@ -10985,28 +10984,29 @@ var gallerySlider = function gallerySlider() {
     });
   };
 
-  var closeFullscreenSwiper = function closeFullscreenSwiper(evt) {
-    var target = evt.target.closest('.swiper-slide');
+  var closeFullscreenSwiper = function closeFullscreenSwiper() {
+    //const target = evt.target.closest('.swiper-slide');
     swiper.el.classList.remove('fullscreen');
-    test.classList.remove('is-open');
+    tabInner.classList.remove('is-open');
     jewellerySection.classList.remove('is-open');
     tabSlider.classList.add('gradient-on');
-    body[0].classList.remove('no-scroll');
     tabs.style.position = "relative";
     tab.style.position = "relative";
 
     if (breakpoint.matches) {
-      swiper.params.slidesPerView = 1.4;
-    } else {
-      swiper.params.slidesPerView = 5;
+      swiper.params.slidesPerView = 1.4; //swiper.update();
     }
 
-    swiper.update();
-    swiperSlides.forEach(function (item, index) {
-      if (item.id === target.id) {
-        item.classList.remove('show');
-        swiper.slideTo(index, 10);
-      }
+    if (breakpointDesktopLow.matches) {
+      swiper.params.slidesPerView = 3; //swiper.update();
+    }
+
+    if (breakpointDesktopHigh.matches) {
+      swiper.params.slidesPerView = 5; //swiper.update();
+    }
+
+    swiperSlides.forEach(function (item) {
+      item.classList.remove('show'); //swiper.slideToLoop(index, 10);
     });
     closeButtons.forEach(function (button) {
       button.removeEventListener('click', closeFullscreenSwiper);
@@ -11018,17 +11018,26 @@ var gallerySlider = function gallerySlider() {
   });
 
   var breakpointChecker = function breakpointChecker() {
-    if (breakpointDesktop.matches) {
-      swiper.params.centeredSlides = false;
+    if (breakpoint.matches) {
+      swiper.params.slidesPerView = 1.4;
       swiper.update();
-    } else {
-      swiper.params.centeredSlides = true;
+    }
+
+    if (breakpointDesktopLow.matches) {
+      swiper.params.slidesPerView = 3;
+      swiper.update();
+    }
+
+    if (breakpointDesktopHigh.matches) {
+      swiper.params.slidesPerView = 5;
       swiper.update();
     }
   };
 
   breakpointChecker();
-  breakpointDesktop.addListener(breakpointChecker);
+  breakpoint.addListener(breakpointChecker);
+  breakpointDesktopLow.addListener(breakpointChecker);
+  breakpointDesktopHigh.addListener(breakpointChecker);
 };
 
 

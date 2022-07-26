@@ -46,6 +46,7 @@
 .tabs-header__item.is-active {
   border-bottom: 5px solid $color-nero;
   width: 100%;
+  pointer-events: none;
 
   @include vp-1023 {
     border-bottom: 3px solid $color-nero;

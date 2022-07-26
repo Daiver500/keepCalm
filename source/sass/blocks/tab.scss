@@ -67,7 +67,7 @@
   height: 30px;
 }
 
-.test.is-open .tab__close-btn {
+.tab__inner.is-open .tab__close-btn {
   opacity: 1;
   pointer-events: all;
 
@@ -103,7 +103,6 @@
   }
 }
 
-
 .tab--second.gradient-on.tab--second::before {
   background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.05) 100%);
   left: 0;
@@ -113,4 +112,14 @@
 .tab--second.gradient-on.tab--second::after {
   background: linear-gradient(270deg, white 0%, rgba(255, 255, 255, 0.05) 100%);
   right: 0;
+}
+
+.tab__inner.is-open {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-nero;
 }
