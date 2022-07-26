@@ -10934,6 +10934,8 @@ var gallerySlider = function gallerySlider() {
   var swiper = new Swiper('.gallery-slider', {
     grabCursor: true,
     speed: 1000,
+    slidesPerView: 5,
+    spaceBetween: 40,
     direction: 'horizontal',
     slideToClickedSlide: true,
     loop: true,
@@ -10942,36 +10944,18 @@ var gallerySlider = function gallerySlider() {
     navigation: {
       nextEl: '.slider-button--next',
       prevEl: '.slider-button--prev'
-    },
-    breakpoints: {
-      1440: {
-        slidesPerView: 5,
-        spaceBetween: 40
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 40
-      },
-      0: {
-        slidesPerView: 1.4,
-        spaceBetween: 20
-      }
     }
   });
-  var swiperSlides = Array.from(swiper.slides);
+  var swiperSlides = document.querySelectorAll('.gallery-slider');
   var tabInner = document.querySelector('.tab__inner');
-  var tabs = document.querySelector('.tabs');
-  var tab = document.querySelector('.tab--second');
   var closeButtons = document.querySelectorAll('.tab__close-btn');
 
   var openFullscreenSwiper = function openFullscreenSwiper(evt) {
-    var target = evt.target.closest('.swiper-slide');
+    var target = evt.target.closest('.gallery-slider');
     swiper.el.classList.add('fullscreen');
     tabInner.classList.add('is-open');
     jewellerySection.classList.add('is-open');
     tabSlider.classList.remove('gradient-on');
-    tabs.style.position = "unset";
-    tab.style.position = "unset";
     swiper.params.slidesPerView = 1; //swiper.update();
 
     swiperSlides.forEach(function (item, index) {
@@ -10985,13 +10969,10 @@ var gallerySlider = function gallerySlider() {
   };
 
   var closeFullscreenSwiper = function closeFullscreenSwiper() {
-    //const target = evt.target.closest('.swiper-slide');
     swiper.el.classList.remove('fullscreen');
     tabInner.classList.remove('is-open');
     jewellerySection.classList.remove('is-open');
     tabSlider.classList.add('gradient-on');
-    tabs.style.position = "relative";
-    tab.style.position = "relative";
 
     if (breakpoint.matches) {
       swiper.params.slidesPerView = 1.4; //swiper.update();
@@ -11018,17 +10999,17 @@ var gallerySlider = function gallerySlider() {
   });
 
   var breakpointChecker = function breakpointChecker() {
-    if (breakpoint.matches) {
+    if (breakpoint.matches && !tabInner.classList.contains('is-open')) {
       swiper.params.slidesPerView = 1.4;
       swiper.update();
     }
 
-    if (breakpointDesktopLow.matches) {
+    if (breakpointDesktopLow.matches && !tabInner.classList.contains('is-open')) {
       swiper.params.slidesPerView = 3;
       swiper.update();
     }
 
-    if (breakpointDesktopHigh.matches) {
+    if (breakpointDesktopHigh.matches && !tabInner.classList.contains('is-open')) {
       swiper.params.slidesPerView = 5;
       swiper.update();
     }

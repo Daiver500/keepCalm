@@ -9,6 +9,8 @@ const gallerySlider = () => {
   let swiper = new Swiper('.gallery-slider', {
     grabCursor: true,
     speed: 1000,
+    slidesPerView: 5,
+    spaceBetween: 40,
     direction: 'horizontal',
     slideToClickedSlide: true,
     loop: true,
@@ -18,37 +20,19 @@ const gallerySlider = () => {
       nextEl: '.slider-button--next',
       prevEl: '.slider-button--prev',
     },
-    breakpoints: {
-      1440: {
-        slidesPerView: 5,
-        spaceBetween: 40,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-      0: {
-        slidesPerView: 1.4,
-        spaceBetween: 20,
-      },
-    },
   });
 
-  const swiperSlides = Array.from(swiper.slides);
+  const swiperSlides = document.querySelectorAll('.gallery-slider');
 
   const tabInner = document.querySelector('.tab__inner');
-  const tabs = document.querySelector('.tabs');
-  const tab = document.querySelector('.tab--second');
   const closeButtons = document.querySelectorAll('.tab__close-btn');
 
   const openFullscreenSwiper = (evt) => {
-    const target = evt.target.closest('.swiper-slide');
+    const target = evt.target.closest('.gallery-slider');
     swiper.el.classList.add('fullscreen');
     tabInner.classList.add('is-open');
     jewellerySection.classList.add('is-open');
     tabSlider.classList.remove('gradient-on');
-    tabs.style.position = "unset";
-    tab.style.position = "unset";
     swiper.params.slidesPerView = 1;
     //swiper.update();
     swiperSlides.forEach((item, index) => {
@@ -63,13 +47,10 @@ const gallerySlider = () => {
   };
 
   const closeFullscreenSwiper = () => {
-    //const target = evt.target.closest('.swiper-slide');
     swiper.el.classList.remove('fullscreen');
     tabInner.classList.remove('is-open');
     jewellerySection.classList.remove('is-open');
     tabSlider.classList.add('gradient-on');
-    tabs.style.position = "relative";
-    tab.style.position = "relative";
     if (breakpoint.matches) {
       swiper.params.slidesPerView = 1.4;
       //swiper.update();
@@ -83,10 +64,8 @@ const gallerySlider = () => {
       //swiper.update();
     }
     swiperSlides.forEach((item) => {
-
-        item.classList.remove('show');
-        //swiper.slideToLoop(index, 10);
-
+      item.classList.remove('show');
+      //swiper.slideToLoop(index, 10);
     });
     closeButtons.forEach((button) => {
       button.removeEventListener('click', closeFullscreenSwiper);
@@ -99,15 +78,15 @@ const gallerySlider = () => {
 
   const breakpointChecker = () => {
 
-    if (breakpoint.matches) {
+    if (breakpoint.matches && !tabInner.classList.contains('is-open')) {
       swiper.params.slidesPerView = 1.4;
       swiper.update();
     }
-    if (breakpointDesktopLow.matches) {
+    if (breakpointDesktopLow.matches && !tabInner.classList.contains('is-open')) {
       swiper.params.slidesPerView = 3;
       swiper.update();
     }
-    if (breakpointDesktopHigh.matches) {
+    if (breakpointDesktopHigh.matches && !tabInner.classList.contains('is-open')) {
       swiper.params.slidesPerView = 5;
       swiper.update();
     }

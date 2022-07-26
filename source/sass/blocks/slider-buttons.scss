@@ -1,17 +1,25 @@
-.slider-buttons {
+.jewellery .slider-buttons {
   position: absolute;
-  bottom: -70px;
-  left: 50%;
+  right: 42%;
+  top: 105%;
   transform: translateX(-50%);
   min-width: 150px;
   min-height: 32px;
   display: flex;
-  justify-content: space-between;
   z-index: 200;
 
   @include vp-1023 {
-    display: none;
+    right: 0;
+    left: 50%;
+    min-width: 60px;
+    min-height: 30px;
   }
+}
+
+.jewellery .slider-buttons .container {
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
 }
 
 .slider-button {
@@ -42,27 +50,43 @@
 }
 
 .jewellery.is-open .slider-buttons {
-  //bottom: 208px;
-  left: 80%;
-  transform: translateX(-80%);
+  right: -1px;
+  top: 91%;
+  transform: unset;
   background-color: $color-nero;
-  min-width: 135px;
-  min-height: 70px;
+  max-width: 135px;
+  max-height: 70px;
   align-items: center;
   padding: 19px 23px;
 
   @include vp-1023 {
     display: flex;
-    bottom: 147px;
-    left: 90%;
-    transform: translateX(-90%);
-    min-width: 60px;
-    min-height: 30px;
+    right: 0;
+    left: unset;
+    top: 95%;
+    max-width: 60px;
+    max-height: 30px;
     padding: 8px 11px;
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1090px) {
+.slider-buttons--closed-slider {
+  display: flex;
+}
+
+.slider-buttons--opened-slider {
+  display: none;
+}
+
+.tab__inner.is-open .slider-buttons--closed-slider {
+  display: none;
+}
+
+.tab__inner.is-open .slider-buttons--opened-slider {
+  display: flex;
+}
+
+/*@media (min-width: 1024px) and (max-width: 1090px) {
   .jewellery.is-open .slider-buttons {
     bottom: 174px;
     left: 82%;
@@ -108,5 +132,5 @@
     left: 82%;
     transform: translateX(-89%);
   }
-}
+}*/
 
